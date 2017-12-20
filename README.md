@@ -1,1 +1,1 @@
-# Serrano_Tijeras_Victor_Manuel_PROG_Tarea05
+Víctor Manuel Serrano Tijeras, repositorio para la tarea 05 de programación.
