@@ -11,4 +11,27 @@ public class Cliente {
 	private int identificador;
 	private static int numClientes= 0;
 	
+	public Cliente  (String nombre, String direccion, String localidad, String codigoPostal) 
+						throws ExcepcionAlquilerVehiculos {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.localidad = localidad;
+		Pattern p = Pattern.compile("[0-9]{5}");
+		Matcher m = p.matcher(codigoPostal);
+		if ( ! m.matches())
+			throw new ExcepcionAlquilerVehiculos ("Error de codigo postal");
+		this.codigoPostal = codigoPostal;
+		numClientes++;
+		this.identificador = numClientes;
+	}
+	
+	public Cliente  (Cliente cliente) 
+			throws ExcepcionAlquilerVehiculos {
+		this.nombre = cliente.nombre;
+		this.direccion = cliente.direccion;
+		this.localidad = cliente.localidad;
+		this.codigoPostal = cliente.codigoPostal;
+		numClientes++;
+		this.identificador = numClientes;
+	}
 }
