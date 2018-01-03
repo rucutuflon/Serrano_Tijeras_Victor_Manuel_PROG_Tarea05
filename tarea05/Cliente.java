@@ -16,15 +16,21 @@ public class Cliente {
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.localidad = localidad;
-		Pattern p = Pattern.compile("[0-9]{5}");
-		Matcher m = p.matcher(codigoPostal);
-		if ( ! m.matches())
+		if (comprobarCodigoPostal (codigoPostal) == false)
 			throw new ExcepcionAlquilerVehiculos ("Error de codigo postal");
 		this.codigoPostal = codigoPostal;
 		numClientes++;
 		this.identificador = numClientes;
 	}
 	
+	private boolean comprobarCodigoPostal(String codigoPostal2) {
+		Pattern p = Pattern.compile("[0-9]{5}");
+		Matcher m = p.matcher(codigoPostal);
+		if ( ! m.matches())
+			return false;
+		return true;
+	}
+
 	public Cliente  (Cliente cliente) 
 			throws ExcepcionAlquilerVehiculos {
 		this.nombre = cliente.nombre;
