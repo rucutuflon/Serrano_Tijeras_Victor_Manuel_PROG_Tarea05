@@ -64,4 +64,10 @@ public class Cliente {
 	public static int getNumClientes() {
 		return numClientes;
 	}
+
+	public String toString() {
+		return "(" + nombre + ", " + direccion + ", " + localidad + ", " + codigoPostal + ", " + identificador + ")";
+	}
+	
+	
 }
