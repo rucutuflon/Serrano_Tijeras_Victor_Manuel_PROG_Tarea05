@@ -40,4 +40,28 @@ public class Cliente {
 		numClientes++;
 		this.identificador = numClientes;
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public String getCodigoPostal() {
+		return codigoPostal;
+	}
+
+	public int getIdentificador() {
+		return identificador;
+	}
+
+	public static int getNumClientes() {
+		return numClientes;
+	}
 }
