@@ -25,7 +25,7 @@ public class Cliente {
 	
 	private boolean comprobarCodigoPostal(String codigoPostal2) {
 		Pattern p = Pattern.compile("[0-9]{5}");
-		Matcher m = p.matcher(codigoPostal);
+		Matcher m = p.matcher(codigoPostal2);
 		if ( ! m.matches())
 			return false;
 		return true;
