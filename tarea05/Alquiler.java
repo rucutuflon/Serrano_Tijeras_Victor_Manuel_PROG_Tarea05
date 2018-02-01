@@ -12,4 +12,11 @@ public class Alquiler {
 	private Turismo turismo;
 	private Cliente cliente;
 	
+	public Alquiler (Cliente cliente, Turismo turismo) {
+		this.cliente = cliente;
+		this.turismo = turismo;
+		fecha = new Date ();
+		dias = 0;
+	}
+
 }
