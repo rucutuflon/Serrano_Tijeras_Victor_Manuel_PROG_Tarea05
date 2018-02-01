@@ -8,4 +8,23 @@ public class Turismo {
 	private String marca;
 	private String modelo;
 	private int cilindrada;
+	
+	public Turismo (String matricula, String marca, String modelo, int cilindrada) 
+			throws ExcepcionAlquilerVehiculos {
+		if (comprobarMatricula(matricula) == false)
+			throw new ExcepcionAlquilerVehiculos("Error, matricula no valida");
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.cilindrada = cilindrada;
+	}
+		
+		private boolean comprobarMatricula(String matricula) {
+		Pattern p = Pattern.compile("[0-9]{4}[A-Z]{3}");
+		Matcher m = p.matcher(matricula);
+			if ( ! m.matches())
+				return false;
+			return true;
+		}
+
 }
