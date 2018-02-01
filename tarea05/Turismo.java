@@ -42,5 +42,11 @@ public class Turismo {
 	public int getCilindrada() {
 		return cilindrada;
 	}
+	
+	@Override
+	public String toString() {
+		return "Turismo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", cilindrada="
+				+ cilindrada + "]";
+	}
 
 }
