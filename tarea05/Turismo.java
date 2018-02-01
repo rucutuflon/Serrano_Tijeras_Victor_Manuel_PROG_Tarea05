@@ -10,7 +10,7 @@ public class Turismo {
 	private int cilindrada;
 	
 	public Turismo (String matricula, String marca, String modelo, int cilindrada) 
-			throws ExcepcionAlquilerVehiculos {
+					throws ExcepcionAlquilerVehiculos {
 		if (comprobarMatricula(matricula) == false)
 			throw new ExcepcionAlquilerVehiculos("Error, matricula no valida");
 		this.matricula = matricula;
@@ -18,13 +18,29 @@ public class Turismo {
 		this.modelo = modelo;
 		this.cilindrada = cilindrada;
 	}
-		
-		private boolean comprobarMatricula(String matricula) {
+
+	private boolean comprobarMatricula(String matricula) {
 		Pattern p = Pattern.compile("[0-9]{4}[A-Z]{3}");
 		Matcher m = p.matcher(matricula);
-			if ( ! m.matches())
-				return false;
-			return true;
-		}
+		if ( ! m.matches())
+			return false;
+		return true;
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public int getCilindrada() {
+		return cilindrada;
+	}
 
 }
